@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class TShirts extends Model
+{
+    protected $fillable = [
+        'name',
+        'type',
+        'price'
+    ];
+}
