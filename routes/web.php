@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/Tshirts', [TshirtsController::class, 'index'])->name('tshirts.index');
+Route::get('/Tshirts/create', [TshirtsController::class, 'create'])->name('tshirts.create');
+Route::post('/Tshirts', [TshirtsController::class, 'store'])->name('tshirts.store');

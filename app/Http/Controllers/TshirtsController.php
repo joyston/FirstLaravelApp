@@ -10,4 +10,9 @@ class TshirtsController extends Controller
     {
         return view('tshirts.index');
     }
+
+    public function create()
+    {
+        return view('tshirts.create');
+    }
 }
