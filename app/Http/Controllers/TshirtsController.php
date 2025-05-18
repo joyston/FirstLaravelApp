@@ -11,8 +11,13 @@ class TshirtsController extends Controller
         return view('tshirts.index');
     }
 
-    public function create()
+    public function create() //shows the Create page
     {
         return view('tshirts.create');
+    }
+
+    public function store(Request $request) //saves to db
+    {
+        dd($request);
     }
 }
