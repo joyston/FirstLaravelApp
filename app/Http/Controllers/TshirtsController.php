@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\TShirts;
 
 class TshirtsController extends Controller
 {
@@ -16,8 +18,19 @@ class TshirtsController extends Controller
         return view('tshirts.create');
     }
 
-    public function store(Request $request) //saves to db
+    /** saves to db */
+    public function store(Request $request)
     {
-        dd($request);
+        //dd($request);
+
+        $data = $request->validate([
+            'tshirtname' => 'required',
+            'tshirttype' => 'required',
+            'tshirtprice' => 'required|decimal:2',
+        ]);
+
+        $newTshirt = TShirts::create($data);
+
+        return redirect(route('Tshirts.index'));
     }
 }

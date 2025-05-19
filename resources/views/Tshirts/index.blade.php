@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Tshirts View</h1>
+    <h1>Tshirts Index View</h1>
 </body>
 
 </html>

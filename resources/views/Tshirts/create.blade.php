@@ -10,10 +10,9 @@
 <body>
     <h1>Add new Tshirt</h1>
     <form action="{{route('tshirts.store')}}" method="post">
-        //(Cross-Site Request Forgery)
         @csrf
         @method('post')
-        <label>Name: </label><input type="text" name="tshirtName">
+        <label>Name: </label><input type="text" name="tshirtname">
         <br><label>Type: </label>
         <input type="radio" name="tshirttype" value="Polo">Polo
         <input type="radio" name="tshirttype" value="RoundNeck">Round Neck
