@@ -12,12 +12,14 @@
     <form action="{{route('tshirts.store')}}" method="post">
         @csrf
         @method('post')
-        <label>Name: </label><input type="text" name="tshirtname">
-        <br><label>Type: </label>
-        <input type="radio" name="tshirttype" value="Polo">Polo
-        <input type="radio" name="tshirttype" value="RoundNeck">Round Neck
-        <br><label>Price: </label><input type="number" name="tshirtprice">
-        <br><input type="submit">
+        <label>Name: </label><input type="text" name="name">
+        <br><br>
+        <label>Type: </label>
+        <input type="radio" name="type" value="Polo">Polo
+        <input type="radio" name="type" value="RoundNeck">Round Neck
+        <br><br>
+        <label>Price: </label><input type="number" name="price" step=".01">
+        <br><br><input type="submit">
     </form>
 </body>
 
