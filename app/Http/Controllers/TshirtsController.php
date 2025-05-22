@@ -47,4 +47,22 @@ class TshirtsController extends Controller
 
         return redirect(route('tshirts.index'));
     }
+
+    public function edit(Merch $tshirt)
+    {
+        return view('tshirts.edit', ['tshirt' => $tshirt]);
+    }
+
+    public function update(Merch $tshirt, Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'price' => 'required|decimal:2',
+        ]);
+
+        $tshirt->update($data);
+
+        return redirect(route('tshirts.index'))->with('success', 'Product updated successfully!');
+    }
 }
