@@ -10,7 +10,8 @@ class TshirtsController extends Controller
 {
     public function index()
     {
-        return view('tshirts.index');
+        $tshirts = Merch::all();
+        return view('tshirts.index', ['tshirts' => $tshirts]);
     }
 
     public function create() //shows the Create page
@@ -21,7 +22,7 @@ class TshirtsController extends Controller
     /** saves to db */
     public function store(Request $request)
     {
-        // dd($request);
+        // dd($request);  //dump data for testing
 
         /*  $data = $request->validate([
             'tshirtname' => 'required',
@@ -35,7 +36,7 @@ class TshirtsController extends Controller
             'price' => 'required|decimal:2',
         ]);
 
-        //$newTshirt = Merch::create($data);
+        // $newTshirt = Merch::create($data);
 
         $newTshirt = new Merch;
 
