@@ -9,6 +9,15 @@
 
 <body>
     <h1>Add new Tshirt</h1>
+    <div>
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+        </div>
     <form action="{{route('tshirts.store')}}" method="post">
         @csrf
         @method('post')

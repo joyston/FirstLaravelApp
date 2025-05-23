@@ -9,6 +9,15 @@
 
 <body>
     <h1>Edit Tshirt</h1>
+    <div>
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+        </div>
     <form action="{{route('tshirts.update', ['tshirt'=>$tshirt])}}" method="post">
         @csrf
         @method('put')
