@@ -15,3 +15,4 @@ Route::get('/Tshirts/{tshirt}/edit', [TshirtsController::class, 'edit'])->name('
 //Post route
 Route::post('/Tshirts', [TshirtsController::class, 'store'])->name('tshirts.store');
 Route::put('/Tshirts/{tshirt}/update', [TshirtsController::class, 'update'])->name('tshirts.update');
+Route::delete('/Tshirts/{tshirt}/delete', [TshirtsController::class, 'remove'])->name('tshirts.delete');

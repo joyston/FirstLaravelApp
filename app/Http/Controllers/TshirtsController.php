@@ -65,4 +65,10 @@ class TshirtsController extends Controller
 
         return redirect(route('tshirts.index'))->with('success', 'Product updated successfully!');
     }
+
+    public function remove(Merch $tshirt)
+    {
+        $tshirt->delete();
+        return redirect(route('tshirts.index'))->with('success', 'Product Deleted Successfully!');
+    }
 }
